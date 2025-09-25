@@ -46,8 +46,6 @@ class LoginScreen extends StatelessWidget {
                           onPressed: () {},
                           child: Text('Entrar com google'),
                         ),
-                        SizedBox(width: 20),
-                        Icon(Icons.g_mobiledata_rounded, color: Colors.red),
                       ],
                     ),
                     SizedBox(height: 16),
