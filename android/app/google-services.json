@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "605205712189",
+    "project_id": "horas-be4fa",
+    "storage_bucket": "horas-be4fa.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:605205712189:android:52ab94f1f7370f1fe04954",
+        "android_client_info": {
+          "package_name": "com.example.first_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDPGxTOubI4LbLQzcaLyTl_r_MuyAs6mOc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
