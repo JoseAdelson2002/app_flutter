@@ -1,3 +1,4 @@
+import 'package:first_app/services/auth_service.dart';
 import 'package:flutter/material.dart';
 
 class RegisterScreen extends StatelessWidget {
@@ -7,6 +8,8 @@ class RegisterScreen extends StatelessWidget {
   final TextEditingController _senhaController = TextEditingController();
   final TextEditingController _confirmarSenhaController = TextEditingController();
   final TextEditingController _nomeController = TextEditingController();
+
+  AuthService authService = AuthService();
 
   @override
   Widget build(BuildContext context) {
@@ -48,7 +51,7 @@ class RegisterScreen extends StatelessWidget {
                   SizedBox(height: 16,),
                   ElevatedButton(onPressed: () {
                     if (_senhaController.text == _confirmarSenhaController.text) {
-
+                      authService.cadastrarUsuario(email: _emailController.text, senha: _senhaController.text, nome: _nomeController.text);
                     }
                   }, child: Text('Cadastrar')),
                   SizedBox(height: 16,)
