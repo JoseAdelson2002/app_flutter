@@ -52,7 +52,12 @@ class LoginScreen extends StatelessWidget {
                     SizedBox(height: 16),
                     TextButton(
                       onPressed: () {
-                        Navigator.push(context, MaterialPageRoute(builder: (context) => RegisterScreen(),));
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => RegisterScreen(),
+                          ),
+                        );
                       },
                       child: Text('Ainda não tem uma conta? Crie uma conta!'),
                     ),

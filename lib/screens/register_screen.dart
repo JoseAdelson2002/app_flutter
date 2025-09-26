@@ -2,11 +2,12 @@ import 'package:first_app/services/auth_service.dart';
 import 'package:flutter/material.dart';
 
 class RegisterScreen extends StatelessWidget {
-   RegisterScreen({super.key});
+  RegisterScreen({super.key});
 
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _senhaController = TextEditingController();
-  final TextEditingController _confirmarSenhaController = TextEditingController();
+  final TextEditingController _confirmarSenhaController =
+      TextEditingController();
   final TextEditingController _nomeController = TextEditingController();
 
   AuthService authService = AuthService();
@@ -27,36 +28,46 @@ class RegisterScreen extends StatelessWidget {
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(16),
                 ),
-                child: Column(children: [
-                  FlutterLogo(size: 76,),
-                  SizedBox(height: 16,),
-                  TextField(
-                    controller: _nomeController,
-                    decoration: InputDecoration(hintText: 'Nome'),
-                  ),
-                  TextField(
-                    controller: _emailController,
-                    decoration: InputDecoration(hintText: 'Email'),
-                  ),
-                  TextField(
-                    obscureText: true,
-                    controller: _senhaController,
-                    decoration: InputDecoration(hintText: 'Senha'),
-                  ),
-                  TextField(
-                    obscureText: true,
-                    controller: _confirmarSenhaController,
-                    decoration: InputDecoration(hintText: 'Confirmar Senha'),
-                  ),
-                  SizedBox(height: 16,),
-                  ElevatedButton(onPressed: () {
-                    if (_senhaController.text == _confirmarSenhaController.text) {
-                      authService.cadastrarUsuario(email: _emailController.text, senha: _senhaController.text, nome: _nomeController.text);
-                    }
-                  }, child: Text('Cadastrar')),
-                  SizedBox(height: 16,)
-                ],),
-              )
+                child: Column(
+                  children: [
+                    FlutterLogo(size: 76),
+                    SizedBox(height: 16),
+                    TextField(
+                      controller: _nomeController,
+                      decoration: InputDecoration(hintText: 'Nome'),
+                    ),
+                    TextField(
+                      controller: _emailController,
+                      decoration: InputDecoration(hintText: 'Email'),
+                    ),
+                    TextField(
+                      obscureText: true,
+                      controller: _senhaController,
+                      decoration: InputDecoration(hintText: 'Senha'),
+                    ),
+                    TextField(
+                      obscureText: true,
+                      controller: _confirmarSenhaController,
+                      decoration: InputDecoration(hintText: 'Confirmar Senha'),
+                    ),
+                    SizedBox(height: 16),
+                    ElevatedButton(
+                      onPressed: () {
+                        if (_senhaController.text ==
+                            _confirmarSenhaController.text) {
+                          authService.cadastrarUsuario(
+                            email: _emailController.text,
+                            senha: _senhaController.text,
+                            nome: _nomeController.text,
+                          );
+                        }
+                      },
+                      child: Text('Cadastrar'),
+                    ),
+                    SizedBox(height: 16),
+                  ],
+                ),
+              ),
             ],
           ),
         ),
