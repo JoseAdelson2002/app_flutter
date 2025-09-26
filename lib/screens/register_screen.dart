@@ -55,11 +55,35 @@ class RegisterScreen extends StatelessWidget {
                       onPressed: () {
                         if (_senhaController.text ==
                             _confirmarSenhaController.text) {
-                          authService.cadastrarUsuario(
-                            email: _emailController.text,
-                            senha: _senhaController.text,
-                            nome: _nomeController.text,
+                          authService
+                              .cadastrarUsuario(
+                                email: _emailController.text,
+                                senha: _senhaController.text,
+                                nome: _nomeController.text,
+                              )
+                              .then(
+                                (String? erro) => {
+                                  if (erro != null)
+                                    {
+                                      ScaffoldMessenger.of(
+                                        context,
+                                      ).showSnackBar(
+                                        SnackBar(
+                                          content: Text(erro),
+                                          backgroundColor: Colors.red,
+                                        ),
+                                      ),
+                                    }
+                                  else
+                                    {Navigator.pop(context)},
+                                },
+                              );
+                        } else {
+                          const snackbar = SnackBar(
+                            content: Text('As senhas não correspondem'),
+                            backgroundColor: Colors.red,
                           );
+                          ScaffoldMessenger.of(context).showSnackBar(snackbar);
                         }
                       },
                       child: Text('Cadastrar'),
